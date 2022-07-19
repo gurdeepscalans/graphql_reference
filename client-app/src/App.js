@@ -14,7 +14,7 @@ const GET_USERS = gql`
   }
 `;
 
-const GET_TEST_DATA = gql`
+const GET_TITLE_DATA = gql`
   {
     test {
       title
@@ -23,8 +23,8 @@ const GET_TEST_DATA = gql`
 `;
 
 function App() {
-  const { loading, error, data } = useQuery(GET_USERS);
-  const testdata = useQuery(GET_TEST_DATA);
+  const { loading, error, data } = useQuery(GET_USERS); //call user list query
+  const testdata = useQuery(GET_TITLE_DATA); //call get title query
   if (error) return <h1>Something went wrong!</h1>;
   if (loading) return <h1>Loading...</h1>;
 

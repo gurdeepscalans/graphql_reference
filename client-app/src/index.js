@@ -5,6 +5,7 @@ import { ApolloProvider } from "@apollo/react-hooks";
 
 import App from "./App";
 
+// connect apolloclient with backend
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql",
 });
