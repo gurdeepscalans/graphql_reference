@@ -1,6 +1,7 @@
 const { ApolloServer, gql } = require("apollo-server");
 const axios = require("axios");
 
+//define types and schema
 const typeDefs = gql`
   type User {
     id: ID
@@ -18,6 +19,7 @@ const typeDefs = gql`
   }
 `;
 
+//define query for types
 const resolvers = {
   Query: {
     users: async () => {
@@ -41,9 +43,11 @@ const resolvers = {
   },
 };
 
+//initilialize apolloServer
 const server = new ApolloServer({
   typeDefs,
   resolvers,
 });
 
+// listen/start server
 server.listen().then(({ url }) => console.log(`Server ready at ${url}`));
